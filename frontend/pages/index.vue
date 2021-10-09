@@ -5,11 +5,16 @@
       APIを取得
     </v-btn>
     <template v-if="fetched">
-      <img
-        class="image"
-        src="https://img.7api-01.dp1.sej.co.jp/item-image/140070/AB52A01A9D707E08388655C41B613141.jpg"
-      />
-      {{ products }}
+      <template v-for="product in products">
+        <div :key="product.id">
+          <v-img class="image" :src="product.image" />
+          <div>商品名: {{ product.name }}</div>
+          <div>カテゴリー: {{ product.category }}</div>
+          <div>価格: {{ product.price }}</div>
+          <v-divider></v-divider>
+          <div>合計金額: {{ totalPrice }}</div>
+        </div>
+      </template>
     </template>
   </div>
 </template>
@@ -23,6 +28,11 @@ export default {
     return {
       products: [],
       fetched: false
+    }
+  },
+  computed: {
+    totalPrice() {
+      return 1000
     }
   },
   methods: {
