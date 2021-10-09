@@ -12,7 +12,7 @@
           <div>カテゴリー: {{ product.category }}</div>
           <div>価格: {{ product.price }}</div>
           <v-divider></v-divider>
-          <div>合計金額: {{ totalPrice }}</div>
+          <!-- <div>合計金額: {{ totalPrice }}</div> -->
         </div>
       </template>
     </template>
@@ -32,7 +32,7 @@ export default {
   },
   computed: {
     totalPrice() {
-      return 1000
+      // return this.products.filter(product => product.price)
     }
   },
   methods: {

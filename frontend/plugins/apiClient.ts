@@ -7,7 +7,7 @@ export class ApiClient implements InterfaceApi {
 
   constructor() {
     this.client = axios.create({
-      baseURL: 'http://seven-app-ike-moku.herokuapp.com'
+      baseURL: 'https://seven-app-ike-moku.herokuapp.com'
       // baseURL: 'https://example.com/api/v1'
     })
   }
